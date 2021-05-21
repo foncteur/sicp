@@ -50,3 +50,23 @@
 ; the program never stops
 ; because scheme uses applicative-order evaluation, and new-if is a function
 ; so is evaluates all arguments before applying the function
+
+; Exercise 7
+
+; For very small numbers, a poor guess can be accepted because a 0.001 is not a lot;
+; for example, sqrt(0.0025)=0.05, but 0.045 is considered a good enough approximation
+
+; For very large numbers, 0.001 is too precise because the computation of
+; the square of the current guess can be more than 0.001 from the real value
+; so it's not helpful to demand such a precision
+
+(define (average x y) (/ (+ x y) 2))
+
+(define (improve guess x) (average guess (/ x guess)))
+
+(define (good-enough? x y) (< (abs (- x y)) 0.001))
+
+(define (sqrt-iter-bis old-guess new-guess x)
+  (if (good-enough? old-guess new-guess)
+    new-guess
+    (sqrt-iter-bis new-guess (improve new-guess x) x)))
