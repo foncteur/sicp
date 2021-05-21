@@ -38,3 +38,9 @@
 
 ; the part (if (> b 0) + -) returns an operator, depending on the sign of b
 ; the whole function returns a + abs(b)
+
+; Exercise 5
+
+; an interpreter that uses normal-order evaluation will return 0
+; an interpreter that uses applicative-order evaluation will not return anything and
+; will be stuck in an infinite loop
