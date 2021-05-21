@@ -44,3 +44,9 @@
 ; an interpreter that uses normal-order evaluation will return 0
 ; an interpreter that uses applicative-order evaluation will not return anything and
 ; will be stuck in an infinite loop
+
+; Exercise 6
+
+; the program never stops
+; because scheme uses applicative-order evaluation, and new-if is a function
+; so is evaluates all arguments before applying the function
