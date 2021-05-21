@@ -33,3 +33,8 @@
               (else (sum-two-square y z))
         )
 )
+
+; Exercise 4
+
+; the part (if (> b 0) + -) returns an operator, depending on the sign of b
+; the whole function returns a + abs(b)
