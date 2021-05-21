@@ -1,2 +1,2 @@
 # sicp
-Exercices of SICP, in Scheme
+Exercises of SICP, in Scheme
