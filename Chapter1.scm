@@ -70,3 +70,19 @@
   (if (good-enough? old-guess new-guess)
     new-guess
     (sqrt-iter-bis new-guess (improve new-guess x) x)))
+
+(define (sqrt-bis x) (sqrt-iter-bis 1.0 2.0 x))
+
+; Exercise 8
+(define (good-enough? guess y) (< (abs (- (* guess (* guess guess)) y)) 0.01))
+
+(define (improve-cube guess x)
+  (/ (+ (/ x (* guess guess)) (* 2 guess)) 3)
+  )
+
+(define (cube-root-iter guess x)
+  (if (good-enough? guess x)
+    guess
+    (cube-root-iter (improve-cube guess x) x)))
+
+(define (cube-root x) (cube-root-iter 1.O x))
